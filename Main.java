@@ -8,6 +8,8 @@ public class Main {
 		// Dividimos el RUT en dos partes utilizando el método split y el separador "-".
 		// La primera parte corresponde al número del RUT y la segunda parte corresponde a la letra verificadora.
 		String[] parts = rut.split("-");
+		//Quitamos los posibles puntos que tenga el RUT
+		parts[0] = parts[0].replace(".", "");
 		// Verificamos si la primera parte (el número del RUT) está compuesta únicamente por dígitos y si la segunda parte (la letra verificadora) es un carácter válido (un dígito o la letra "k" o "K").
 		// Si alguna de estas condiciones no se cumple, devolvemos false.
 		if (!parts[0].matches("\\d+") || !parts[1].matches("[0-9kK]{1}")) {
